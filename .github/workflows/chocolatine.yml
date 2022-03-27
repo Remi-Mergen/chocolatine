@@ -1,0 +1,33 @@
+name: chocolatine
+
+on:
+  push:
+    branches:
+      - '**'        # matches every branch
+      - '!ga-ignore-*'   # excludes ga-ignore-
+  pull_request:
+    branches: 
+      - '**'        # matches every branch
+      - '!ga-ignore-*'   # excludes ga-ignore-
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          find . -name "*.a" -o -name "*.exe" -o -name "*.o" -o -name "*.so" -o -name "*.gcno" -o -name "*.gcda" -o -name "*.gcov" -o -name "*~" -o -name "#*#"
+          echo test, and deploy your project.
