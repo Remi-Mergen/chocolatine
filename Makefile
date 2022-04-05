@@ -14,7 +14,7 @@ NAME = binary
 all:    $(OBJ)  $(NAME)
 
 $(NAME): $(OBJ)
-        gcc -o $(NAME) $(OBJ)
+		gcc -o $(NAME) $(OBJ)
 
-clean:
-        rm -f $(OBJ)
+clear:
+		rm -f $(OBJ)
