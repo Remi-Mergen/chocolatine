@@ -16,5 +16,5 @@ all:    $(OBJ)  $(NAME)
 $(NAME): $(OBJ)
 		gcc -o $(NAME) $(OBJ)
 
-clear:
+clean:
 		rm -f $(OBJ)
