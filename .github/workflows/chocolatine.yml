@@ -24,7 +24,7 @@ jobs:
           for FILES in $UNWANTED_FILES; do
             echo "::error file=${FILE#./}, title=Unwanted file detected::${FILE#./}"
           done
-          if [[ -z "$UNWATED_FILES" ]]
+          if [[ "$UNWATED_FILES" ]]
           then
             echo list: $UNWATED_FILES
           else
