@@ -10,7 +10,7 @@ on:
 
 env:
   MIRROR_URL: "git@github.com:Remi-Mergen/chocolatine-mirror.git"
-  EXECUTABLES: "binary"
+  EXECUTABLES: "tetris"
 
 jobs:
   check_repo:
