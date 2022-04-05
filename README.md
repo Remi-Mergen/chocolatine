@@ -1,8 +1,10 @@
-# chocolatine
-Epitech project to introduce you to DevOps
+# BSQ
+EPITECH project, BSQ
 
-main branch status :
-[![chocolatine](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml/badge.svg?branch=master)](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml)
+The goal is to find the largest square in a given map within the smallest amount of time
 
-test branch status :
-[![chocolatine](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml/badge.svg?branch=test)](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml)
+Compile with :
+$make
+
+USAGE :
+$./bsq [map]
