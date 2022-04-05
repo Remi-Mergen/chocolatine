@@ -24,9 +24,6 @@ jobs:
           for FILES in $UNWANTED_FILES; do
             echo "::error file=${FILE#./}, title=Unwanted file detected::${FILE#./}"
           done
-          if [ "$UNWATED_FILES" != ""]; then
-            exit 1
-          fi
 
   check_if_compil:
     needs: [check_repo]
