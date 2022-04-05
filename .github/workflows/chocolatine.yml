@@ -27,6 +27,8 @@ jobs:
           if [ -n "$UNWATED_FILES" ];
           then
             exit 1
+          else
+            echo $UNWANTED_FILES
           fi
 
   check_if_compil:
