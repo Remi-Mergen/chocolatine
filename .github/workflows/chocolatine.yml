@@ -2,11 +2,9 @@ name: chocolatine
 
 on:
   push:
-    branches-ignore:
-      - "ga-ignore-*"
+    - "**!ga-ignore-*"
   pull_request:
-    branches-ignore:
-      - "ga-ignore-*"
+    - "**!ga-ignore-*"
 
 env:
   MIRROR_URL: "git@github.com:Remi-Mergen/chocolatine-mirror.git"
@@ -24,7 +22,7 @@ jobs:
           for FILES in $UNWANTED_FILES; do
             echo "::error file=${FILE#./}, title=Unwanted file detected::${FILE#./}"
           done
-          if -z "$UNWATED_FILES"
+          if [[ -z "$UNWATED_FILES" ]]
           then
             echo hey
           else
