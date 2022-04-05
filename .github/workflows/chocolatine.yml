@@ -78,4 +78,4 @@ jobs:
           target_repo_url:
             ${{ env.MIRROR_URL }}
           ssh_private_key:
-            ${{ secrets.Key }}
+            ${{ secrets.KEY }}
