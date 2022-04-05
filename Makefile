@@ -5,10 +5,16 @@
 ## Makefile
 ##
 
+SRC = usefull.c
+
+OBJ = $(SRC:.c=.o)
+
 NAME = binary
 
-all:
-	gcc -o $(NAME) usefull.c
+all:    $(OBJ)  $(NAME)
+
+$(NAME): $(OBJ)
+        gcc -o $(NAME) $(OBJ)
 
 clean:
-	rm *.o
+        rm -f $(OBJ)
