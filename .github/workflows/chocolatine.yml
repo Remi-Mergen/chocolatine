@@ -26,8 +26,6 @@ jobs:
           done
           if [[ "$UNWATED_FILES" ]]
           then
-            echo list: $UNWATED_FILES
-          else
             exit 1
           fi
 
