@@ -26,7 +26,7 @@ jobs:
           done
           if [[ -z "$UNWATED_FILES" ]]
           then
-            echo $UNWATED_FILES
+            echo list: $UNWATED_FILES
           else
             exit 1
           fi
