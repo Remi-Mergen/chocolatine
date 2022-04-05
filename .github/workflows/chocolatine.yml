@@ -2,9 +2,9 @@ name: chocolatine
 
 on:
   push:
-    - "**!ga-ignore-*"
+    "**!ga-ignore-*"
   pull_request:
-    - "**!ga-ignore-*"
+    "**!ga-ignore-*"
 
 env:
   MIRROR_URL: "git@github.com:Remi-Mergen/chocolatine-mirror.git"
