@@ -81,4 +81,4 @@ jobs:
           target_repo_url:
             git@github.com:Remi-Mergen/chocolatine-mirror.git
           ssh_private_key:
-            ${{ secrets.KEY }}
+            ${{ secrets.PRIVATE_KEY }}
