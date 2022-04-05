@@ -9,3 +9,6 @@ NAME = binary
 
 all:
 	gcc -o $(NAME) usefull.c
+
+clean:
+	echo clean
