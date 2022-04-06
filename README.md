@@ -8,3 +8,8 @@ $make
 
 USAGE :
 $./bsq [map]
+
+Actions status:
+
+
+[![chocolatine](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml/badge.svg?branch=test)](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml)
