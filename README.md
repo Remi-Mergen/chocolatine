@@ -1,8 +1,14 @@
-# chocolatine
-Epitech project to introduce you to DevOps
+# Chocolatine
 
-main branch status :
-[![chocolatine](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml/badge.svg?branch=master)](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml)
+### Epitech Project
 
-test branch status :
-[![chocolatine](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml/badge.svg?branch=test)](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml)
+Introduction to DevOps with GitHub Actions
+<br><br>
+
+  
+Actions status on main branch:
+
+<br>
+  
+  [![chocolatine](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml/badge.svg)](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml)
+  
