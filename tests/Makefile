@@ -7,35 +7,29 @@
 
 CC      	=	gcc
 
-SRC     	=	../src/get_map_tool.c				\
-				../src/auxiliary_coding_style.c		\
-				../src/start_bsq.c					\
-				../src/bsq.c						\
-				test_bsq.c							\
+SRC     	=	test_bsq.c
 
 OBJ			=	$(SRC:.c=.o)
 
 NAME		=	unit_tests
 
-CPPFLAGS	=	-I./../include/
-
 CFLAGS		=	--coverage
 
-LDFLAGS		=	-L./../lib/
-
-LDLIBS		=	-lmy -lcriterion -lg
+LDLIBS		=	-lcriterion
 
 
 all:			fclean $(NAME)
 				./$(NAME)
 
 $(NAME):		$(OBJ)
-				$(CC) -o $(NAME) $(OBJ) $(LDFLAGS) $(LDLIBS) $(CFLAGS) -lcriterion -lgcov
+				$(CC) -o $(NAME) $(OBJ) $(LDLIBS) $(CFLAGS) -lcriterion -lgcov
+
+coverage:
+	@gcovr
 
 clean:
 				rm -f $(OBJ)
 				rm -f *.gc*
-				rm -f ../src/*.gc*
 
 fclean: 		clean
 				rm -f $(NAME)
