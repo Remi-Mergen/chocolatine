@@ -25,7 +25,7 @@ jobs:
           for FILES in $UNWANTED_FILES; do
             echo "::error file=${FILE#./}, title=Unwanted file detected::${FILE#./}"
           done
-          if [[ -n $UNWATED_FILES ]]
+          if [[ -n $UNWANTED_FILES ]]
           then
             exit 1
           else
