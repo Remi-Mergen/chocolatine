@@ -1,4 +1,4 @@
-# BSQ
+# BSQ test
 EPITECH project, BSQ
 
 The goal is to find the largest square in a given map within the smallest amount of time
