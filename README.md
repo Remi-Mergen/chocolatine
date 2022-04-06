@@ -1,10 +1,5 @@
-# BSQ
-EPITECH project, BSQ
+# Chocolatine
 
-The goal is to find the largest square in a given map within the smallest amount of time
+### Epitech Project
 
-Compile with :
-$make
-
-USAGE :
-$./bsq [map]
+Introduction to DevOps with GitHub Actions
