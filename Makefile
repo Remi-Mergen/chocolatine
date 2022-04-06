@@ -7,7 +7,7 @@
 
 CC			=	gcc
 
-SRC			=	usefull.c
+SRC			=	print.c
 
 OBJ			=	$(SRC:.c=.o)
 
