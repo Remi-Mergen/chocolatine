@@ -79,6 +79,6 @@ jobs:
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url:
-            git@github.com:Remi-Mergen/chocolatine-mirror.git
+            ${{ env.MIRROR_URL }}
           ssh_private_key:
             ${{ secrets.PRIVATE_KEY }}
