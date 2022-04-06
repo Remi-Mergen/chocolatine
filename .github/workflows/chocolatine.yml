@@ -10,7 +10,7 @@ on:
 
 env:
   MIRROR_URL: "git@github.com:Remi-Mergen/chocolatine-mirror.git"
-  EXECUTABLES: "bsq maps-intermediate/mouli_maps/intermediate_map_34_137_with_obstacles_50pc"
+  EXECUTABLES: "bsq map"
 
 jobs:
   check_repo:
