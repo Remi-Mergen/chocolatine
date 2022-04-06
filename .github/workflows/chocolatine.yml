@@ -11,6 +11,7 @@ on:
 env:
   MIRROR_URL: "git@github.com:Remi-Mergen/chocolatine-mirror.git"
   EXECUTABLES: "binary"
+  ARGUMENTS: ""
 
 jobs:
   check_repo:
@@ -47,7 +48,7 @@ jobs:
           IFS=','
           for x in $EXECUTABLES
             do
-              ./$x
+              ./$x $ARGUMENTS
             done
           IFS=$OIFS
 
