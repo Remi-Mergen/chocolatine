@@ -11,16 +11,17 @@ on:
 env:
   MIRROR_URL: "git@github.com:Remi-Mergen/chocolatine-mirror.git"
   EXECUTABLES: "binary"
+  ARGUMENTS: ""
 
 jobs:
   check_repo:
-    name: "Check if the repo is clean"
+    name: "Check if the repository is clean"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - id: check_repo
         run: |
-          UNWANTED_FILES=$(find . -type f -not -path "./git/*" -wholename "*tmp/*" -or -name "*~" -or -name "*.o" -or -name "*.so" -or -name "*.gcno" -or -name "*.gdca" -or -name "*.gcov" -or -name "*pain_au_chocolat*")
+          UNWANTED_FILES=$(find . -type f -not -path "./git/*" -wholename "*tmp/*" -or -name "*~" -or -name "*.o" -or -name "*.so" -or -name "*.gcno" -or -name "*.gcda" -or -name "*#" -or -name "#*" -or -name "*.gcov" -or -name "*pain_au_chocolat*")
           for FILES in $UNWANTED_FILES; do
             echo "::error file=${FILE#./}, title=Unwanted file detected::${FILE#./}"
           done
@@ -31,16 +32,16 @@ jobs:
             echo No unwanted files detected
           fi
 
-  check_if_compil:
+  check_program_compilation:
     needs: [check_repo]
-    name: "check if the make compil"
+    name: "Check if make compil"
     runs-on: ubuntu-latest
     container:
       image: epitechcontent/epitest-docker:latest
 
     steps:
       - uses: actions/checkout@v3
-      - id: check_if_compil
+      - id: check_program_compilation
         run: make
         timeout-minutes: 2
       - run: make clean
@@ -49,13 +50,13 @@ jobs:
           IFS=','
           for x in $EXECUTABLES
             do
-              ./$x
+              ./$x $ARGUMENTS
             done
           IFS=$OIFS
 
   run_tests:
-    needs: check_if_compil
-    name: "Run the tests"
+    needs: [check_program_compilation]
+    name: "Run tests"
     runs-on: ubuntu-latest
     container:
       image: epitechcontent/epitest-docker:latest
@@ -67,7 +68,7 @@ jobs:
         timeout-minutes: 2
 
   push_to_mirror:
-    needs: [check_if_compil]
+    needs: [run_tests]
     if: ${{ github.event_name == 'push' }}
     name: "Push to mirror"
     runs-on: ubuntu-latest
@@ -81,4 +82,4 @@ jobs:
           target_repo_url:
             ${{ env.MIRROR_URL }}
           ssh_private_key:
-            ${{ secrets.PRIVATE_KEY }}
+            ${{ secrets.GIT_SSH_PRIVATE_KEY }}
