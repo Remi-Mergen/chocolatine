@@ -34,7 +34,7 @@ jobs:
 
   check_program_compilation:
     needs: [check_repo]
-    name: "Checks if make compil"
+    name: "Checks if make compil and test all binary listed in the ARGUMENTS variable"
     runs-on: ubuntu-latest
     container:
       image: epitechcontent/epitest-docker:latest
@@ -56,7 +56,7 @@ jobs:
 
   run_tests:
     needs: [check_program_compilation]
-    name: "Runs tests"
+    name: "Runs tests with criterion"
     runs-on: ubuntu-latest
     container:
       image: epitechcontent/epitest-docker:latest
@@ -70,7 +70,7 @@ jobs:
   push_to_mirror:
     needs: [run_tests]
     if: ${{ github.event_name == 'push' }}
-    name: "Push to mirror"
+    name: "Push all files to mirror specified"
     runs-on: ubuntu-latest
 
     steps:
