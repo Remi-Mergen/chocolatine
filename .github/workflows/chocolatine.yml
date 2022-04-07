@@ -15,7 +15,7 @@ env:
 
 jobs:
   check_repo:
-    name: "Check if the repository is clean"
+    name: "Checks if the repository is clean and void of any unwanted files (temp files, binary files, etc.)"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -23,7 +23,7 @@ jobs:
         run: |
           UNWANTED_FILES=$(find . -type f -not -path "./git/*" -wholename "*tmp/*" -or -name "*~" -or -name "*.o" -or -name "*.so" -or -name "*.gcno" -or -name "*.gcda" -or -name "*#" -or -name "#*" -or -name "*.gcov" -or -name "*pain_au_chocolat*")
           for FILES in $UNWANTED_FILES; do
-            echo "::error file=${FILES}, title=Unwanted file detected::The file is: ${FILES}"
+            echo "::error file=${FILES}, title={Unwanted file detected}::${FILES}"
           done
           if [[ -n $UNWANTED_FILES ]]
           then
@@ -34,7 +34,7 @@ jobs:
 
   check_program_compilation:
     needs: [check_repo]
-    name: "Check if make compil"
+    name: "Checks if make compil"
     runs-on: ubuntu-latest
     container:
       image: epitechcontent/epitest-docker:latest
@@ -56,7 +56,7 @@ jobs:
 
   run_tests:
     needs: [check_program_compilation]
-    name: "Run tests"
+    name: "Runs tests"
     runs-on: ubuntu-latest
     container:
       image: epitechcontent/epitest-docker:latest
