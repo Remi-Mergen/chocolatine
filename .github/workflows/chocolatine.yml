@@ -23,7 +23,7 @@ jobs:
         run: |
           UNWANTED_FILES=$(find . -type f -not -path "./git/*" -wholename "*tmp/*" -or -name "*~" -or -name "*.o" -or -name "*.so" -or -name "*.gcno" -or -name "*.gcda" -or -name "*#" -or -name "#*" -or -name "*.gcov" -or -name "*pain_au_chocolat*")
           for FILES in $UNWANTED_FILES; do
-            echo "::error file=${FILES}, title=Unwanted file detected::${FILES}"
+            echo "::error file=${FILES}, title=Unwanted file detected::The file is: ${FILES}"
           done
           if [[ -n $UNWANTED_FILES ]]
           then
