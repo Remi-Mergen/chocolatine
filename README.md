@@ -5,7 +5,9 @@
 Introduction to DevOps with GitHub Actions
 <br><br>
 
+Don't forget to star the project ✨
   
+<br><br>
 Actions status on main branch:
 
 <br>
