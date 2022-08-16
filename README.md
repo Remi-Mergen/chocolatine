@@ -12,5 +12,5 @@ Actions status on main branch:
 
 <br>
   
-  [![chocolatine](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml/badge.svg)](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml)
+  [![chocolatine](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml/badge.svg?branch=master)](https://github.com/Remi-Mergen/chocolatine/actions/workflows/chocolatine.yml)
   
