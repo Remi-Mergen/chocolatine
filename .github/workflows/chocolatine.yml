@@ -14,6 +14,27 @@ env:
   ARGUMENTS: ""
 
 jobs:
+  check_coding_style:
+    name: "Use coding_style_checker script to verify if the code is clean and report any coding-style errors"
+    runs-on: ubuntu-latest
+    container: ghcr.io/epitech/coding-style-checker:latest
+    steps:
+      - uses: actions/checkout@v3
+      - id: check_coding_style
+        run: |
+          CODING_STYLE_ERRORS=$(check.sh $(pwd) $(pwd))
+          for ERRORS in $CODING_STYLE_ERRORS; do
+            array=(`echo $ERRORS | sed 's/:/\n/g'`)
+            echo "::error file=${array[1]#./},title=${array[3]#./} coding style errors detected: ${array[2]#./}::${array[4]#./}"
+          done
+          if [[ -n $CODING_STYLE_ERRORS ]]
+          then
+            exit 1
+          else
+            echo No coding style errors detected
+          fi
+  
+
   check_repo:
     name: "Checks if the repository is clean and void of any unwanted files (temp files, binary files, etc.)"
     runs-on: ubuntu-latest
